@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: github-mcp
+    env: python
+    runtime: python-3.11
+    buildCommand: pip install -r requirements.txt
+    startCommand: python github_mcp.py
+    envVars:
+      - key: GITHUB_TOKEN
+        sync: false
