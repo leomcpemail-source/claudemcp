@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: github-mcp
+    env: python
+    runtime: python-3.11
+    buildCommand: pip install -r requirements.txt
+    startCommand: python -u github_mcp.py
+    envVars:
+      - key: GITHUB_TOKEN
+        sync: false
+      - key: PORT
+        value: "10000"
